@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>ASVSP</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -23,11 +23,112 @@
 
 		<div class="reveal">
 			<div class="slides">
-				<section>Test</section>
 				<section>
-          <section>je l' radi?</section>
-          <section>RADI</section>
-        </section>
+					<h2>ASVSP</h2>
+					<p>Aleksandar Stojanović</p>
+				</section>
+				<section>
+					<section>
+						<h2>Motivacija</h2>
+					</section>
+					<section>
+						<p>Analiziranje podataka vezanih za ucinak ucesnika ultramaratona, kao i analiza performansi trkaca u realnom vremenu</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Batch obrada</h2>
+					</section>
+					<section>
+						<p>Analiza učinka učesnika ultramaratona u periodu od 1995. do 2018.</p>
+					</section>
+					<section>
+						<h3>Uzorak podataka</h3>
+						<p>Dataset preuzet sa
+							 <a  target="_blank"
+							 href="https://www.kaggle.com/datasets/aiaiaidavid/the-big-dataset-of-ultra-marathon-running?select=TWO_CENTURIES_OF_UM_RACES.csv">linka
+							 </a>
+						</p>
+						<pre style="
+							font-size: 16px;
+						">
+							<code>
+								Year of event,Event dates,Event name,Event distance/length,Event number of finishers,Athlete performance,Athlete club,Athlete country,Athlete year of birth,Athlete gender,Athlete age category,Athlete average speed,Athlete ID
+								2018,06.01.2018,Selva Costera (CHI),50km,22,4:51:39 h,Tnfrc,CHI,1978.0,M,M35,10.286,0
+								2018,06.01.2018,Selva Costera (CHI),50km,22,5:15:45 h,Roberto Echeverría,CHI,1981.0,M,M35,9.501,1
+								2018,06.01.2018,Selva Costera (CHI),50km,22,5:16:44 h,Puro Trail Osorno,CHI,1987.0,M,M23,9.472,2
+								2018,06.01.2018,Selva Costera (CHI),50km,22,5:34:13 h,Columbia,ARG,1976.0,M,M40,8.976,3
+								2018,06.01.2018,Selva Costera (CHI),50km,22,5:54:14 h,Baguales Trail,CHI,1992.0,M,M23,8.469,4
+								2018,06.01.2018,Selva Costera (CHI),50km,22,6:25:01 h,,ARG,1974.0,M,M40,7.792,5
+								2018,06.01.2018,Selva Costera (CHI),50km,22,6:28:00 h,Los Patagones,ARG,1979.0,F,W35,7.732,6
+								2018,06.01.2018,Selva Costera (CHI),50km,22,6:32:24 h,Reaktiva Chile,CHI,1967.0,F,W50,7.645,7
+								2018,06.01.2018,Selva Costera (CHI),50km,22,6:39:08 h,Puro Trail Osorno,CHI,1985.0,M,M23,7.516,8
+							</code>
+						</pre>
+						<img height="150px" src="imgs/batch_sample_table.png">
+					</section>
+					<section>
+						<h3>Pitanja na koja treba odgovoriti</h3>
+						<ol>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Stream obrada</h2>
+					</section>
+					<section>
+						<p>Praćenje performansi učesnika maratona u realnom vremenu</p>
+					</section>
+					<section>
+						<h3>Uzorak podataka</h3>
+						<p>Dataset preuzet sa
+							 <a  target="_blank"
+							 href="https://data.world/jarnoma/half-marathon">linka
+							 </a>
+						</p>
+						<pre style="
+							font-size: 16px;
+						">
+							<code>
+								Datetime;Latitude;Longitude;Altitude;Distance;HeartRate;Speed;Cadence;Watts
+								2020-10-10 10:01:56+00:00;61.49964236654341;23.759590834379196;97.80000305175781;0.0;123;1.437000036239624;None;None
+								2020-10-10 10:01:57+00:00;61.49965829215944;23.759586475789547;97.0;1.7899999618530273;124;1.7730000019073486;None;None
+								2020-10-10 10:01:58+00:00;61.499674301594496;23.75958220101893;97.5999984741211;3.5299999713897705;126;1.7730000019073486;None;None
+								2020-10-10 10:01:59+00:00;61.49969274178147;23.759587733075023;97.80000305175781;5.599999904632568;127;1.7730000019073486;None;None
+								2020-10-10 10:02:00+00:00;61.49970766156912;23.759580943733454;98.0;7.239999771118164;129;1.781999945640564;None;None
+								2020-10-10 10:02:01+00:00;61.49972274899483;23.75957926735282;98.0;8.890000343322754;130;1.7730000019073486;None;None
+								2020-10-10 10:02:02+00:00;61.49974160827696;23.75957884825766;98.19999694824219;10.979999542236328;131;1.7640000581741333;None;None
+								2020-10-10 10:02:03+00:00;61.49975895881653;23.75958069227636;98.0;12.920000076293945;133;1.7730000019073486;None;None
+								2020-10-10 10:02:04+00:00;61.49978343397379;23.759581446647644;98.19999694824219;15.619999885559082;135;1.7910000085830688;None;None
+							</code>
+						</pre>
+						<img src="imgs/stream_sample_table.png">
+					</section>
+					<section>
+						<h3>Pitanja na koja treba odgovoriti</h3>
+						<ol>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<h2>Hvala na pažnji</h2>
+				</section>
 			</div>
 		</div>
 
