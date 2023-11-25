@@ -22,7 +22,7 @@
 
 
 		<div class="reveal">
-			<div class="slides">
+			<div class="slides" style="font-size: 25px;">
 				<section>
 					<h2>ASVSP</h2>
 					<p>Aleksandar Stojanović</p>
@@ -32,7 +32,7 @@
 						<h2>Motivacija</h2>
 					</section>
 					<section>
-						<p>Analiziranje podataka vezanih za ucinak ucesnika ultramaratona, kao i analiza performansi trkaca u realnom vremenu</p>
+						<p>Analiziranje podataka vezanih za učinak učesnika ultramaratona, kao i analiza performansi trkača u realnom vremenu</p>
 					</section>
 				</section>
 				<section>
@@ -40,7 +40,7 @@
 						<h2>Batch obrada</h2>
 					</section>
 					<section>
-						<p>Analiza učinka učesnika ultramaratona u periodu od 1995. do 2018.</p>
+						<p>Analiza učinka učesnika ultramaratona u periodu od 1798. do 2022.</p>
 					</section>
 					<section>
 						<h3>Uzorak podataka</h3>
@@ -50,36 +50,39 @@
 							 </a>
 						</p>
 						<pre style="
-							font-size: 16px;
+							font-size: 12px;
 						">
 							<code>
-								Year of event,Event dates,Event name,Event distance/length,Event number of finishers,Athlete performance,Athlete club,Athlete country,Athlete year of birth,Athlete gender,Athlete age category,Athlete average speed,Athlete ID
-								2018,06.01.2018,Selva Costera (CHI),50km,22,4:51:39 h,Tnfrc,CHI,1978.0,M,M35,10.286,0
-								2018,06.01.2018,Selva Costera (CHI),50km,22,5:15:45 h,Roberto Echeverría,CHI,1981.0,M,M35,9.501,1
-								2018,06.01.2018,Selva Costera (CHI),50km,22,5:16:44 h,Puro Trail Osorno,CHI,1987.0,M,M23,9.472,2
-								2018,06.01.2018,Selva Costera (CHI),50km,22,5:34:13 h,Columbia,ARG,1976.0,M,M40,8.976,3
-								2018,06.01.2018,Selva Costera (CHI),50km,22,5:54:14 h,Baguales Trail,CHI,1992.0,M,M23,8.469,4
-								2018,06.01.2018,Selva Costera (CHI),50km,22,6:25:01 h,,ARG,1974.0,M,M40,7.792,5
-								2018,06.01.2018,Selva Costera (CHI),50km,22,6:28:00 h,Los Patagones,ARG,1979.0,F,W35,7.732,6
-								2018,06.01.2018,Selva Costera (CHI),50km,22,6:32:24 h,Reaktiva Chile,CHI,1967.0,F,W50,7.645,7
-								2018,06.01.2018,Selva Costera (CHI),50km,22,6:39:08 h,Puro Trail Osorno,CHI,1985.0,M,M23,7.516,8
+Year of event,Event dates,Event name,Event distance/length,Event number of finishers,Athlete performance,Athlete club,Athlete country,Athlete year of birth,Athlete gender,Athlete age category,Athlete average speed,Athlete ID
+2018,06.01.2018,Selva Costera (CHI),50km,22,4:51:39 h,Tnfrc,CHI,1978.0,M,M35,10.286,0
+2018,06.01.2018,Selva Costera (CHI),50km,22,5:15:45 h,Roberto Echeverría,CHI,1981.0,M,M35,9.501,1
+2018,06.01.2018,Yankee Springs 50 Mile Winter Challenge (USA),50mi,9,9:53:05 h,"*Middleville, MI",USA,1983.0,M,M23,8.141,55
+2018,06.01.2018,Yankee Springs 50 Mile Winter Challenge (USA),50mi,9,11:09:35 h,"*Waterloo, ON",CAN,1977.0,F,W40,7.211,56
+1995,07.01.1995,Centenary Lakes 6 Hour Track Run (AUS),6h,16,63.029 km,*QLD,AUS,1943.0,M,M50,10505.0,1065546
+1995,07.01.1995,Centenary Lakes 6 Hour Track Run (AUS),6h,16,57.817 km,*Old,AUS,1951.0,M,M40,9636.0,1046325
+1993,21.09.-04.10.1993,Sri Chinmoy Ultra Trio 700 Mile Race - 1000km Split (USA),1000km,4,10d 07:05:48 h,*NY,USA,1942.0,F,W50,4047.0,1615990
+1993,21.09.-04.10.1993,Sri Chinmoy Ultra Trio 700 Mile Race - 1000km Split (USA),1000km,4,10d 08:04:55 h,,GBR,1943.0,M,M50,4031.0,1047570
+1995,05.-11.03.1995,Millicent Six Day Race (AUS),6d,4,548.400 km,,AUS,1920.0,M,M70,3808.0,1046124
+1995,05.-11.03.1995,Millicent Six Day Race (AUS),6d,4,435.600 km,,SRB,1955.0,F,W35,3025.0,1046122
+
 							</code>
 						</pre>
 						<img height="150px" src="imgs/batch_sample_table.png">
+						<p style="font-size: 12px;">U trkama koje su vremenski ograničene, 'performance' kolona sadrži broj prettrčanih kilometara, a 'average speed' je broj pređenih kilometara po satu</p>
 					</section>
-					<section>
+					<section style="font-size: 25px;">
 						<h3>Pitanja na koja treba odgovoriti</h3>
 						<ol>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
+							<li>Maratoni sa najvećom prosečnom brzinom</li>
+							<li>Popularnost maratona u odnosu na njihovu dužinu</li>
+							<li>Prosečna brzina po starosnoj dobi</li>
+							<li>Prosečna brzina po polu</li>
+							<li>Takmičari sa najboljim napretkom u prosečnoj brzini u karijeri</li>
+							<li>Države sa najvećim brojem takmičara</li>
+							<li>Takmičari sa najvećim brojem pređenih kilometara po maratonu</li>
+							<li>Raspodela takmičara po starosti</li>
+							<li>Takmičari sa najvećom pređenom kilometrazom u čitavoj karijeri</li>
+							<li>Najmasovniji maratoni</li>
 						</ol>
 					</section>
 				</section>
@@ -100,17 +103,17 @@
 						<pre style="
 							font-size: 16px;
 						">
-							<code>
-								Datetime;Latitude;Longitude;Altitude;Distance;HeartRate;Speed;Cadence;Watts
-								2020-10-10 10:01:56+00:00;61.49964236654341;23.759590834379196;97.80000305175781;0.0;123;1.437000036239624;None;None
-								2020-10-10 10:01:57+00:00;61.49965829215944;23.759586475789547;97.0;1.7899999618530273;124;1.7730000019073486;None;None
-								2020-10-10 10:01:58+00:00;61.499674301594496;23.75958220101893;97.5999984741211;3.5299999713897705;126;1.7730000019073486;None;None
-								2020-10-10 10:01:59+00:00;61.49969274178147;23.759587733075023;97.80000305175781;5.599999904632568;127;1.7730000019073486;None;None
-								2020-10-10 10:02:00+00:00;61.49970766156912;23.759580943733454;98.0;7.239999771118164;129;1.781999945640564;None;None
-								2020-10-10 10:02:01+00:00;61.49972274899483;23.75957926735282;98.0;8.890000343322754;130;1.7730000019073486;None;None
-								2020-10-10 10:02:02+00:00;61.49974160827696;23.75957884825766;98.19999694824219;10.979999542236328;131;1.7640000581741333;None;None
-								2020-10-10 10:02:03+00:00;61.49975895881653;23.75958069227636;98.0;12.920000076293945;133;1.7730000019073486;None;None
-								2020-10-10 10:02:04+00:00;61.49978343397379;23.759581446647644;98.19999694824219;15.619999885559082;135;1.7910000085830688;None;None
+							<code style="font-size: 12px;">
+Datetime;Latitude;Longitude;Altitude;Distance;HeartRate;Speed;Cadence;Watts
+2020-10-10 10:01:56+00:00;61.49964236654341;23.759590834379196;97.80000305175781;0.0;123;1.437000036239624;None;None
+2020-10-10 10:01:57+00:00;61.49965829215944;23.759586475789547;97.0;1.7899999618530273;124;1.7730000019073486;None;None
+2020-10-10 10:01:58+00:00;61.499674301594496;23.75958220101893;97.5999984741211;3.5299999713897705;126;1.7730000019073486;None;None
+2020-10-10 10:01:59+00:00;61.49969274178147;23.759587733075023;97.80000305175781;5.599999904632568;127;1.7730000019073486;None;None
+2020-10-10 10:02:00+00:00;61.49970766156912;23.759580943733454;98.0;7.239999771118164;129;1.781999945640564;None;None
+2020-10-10 10:02:01+00:00;61.49972274899483;23.75957926735282;98.0;8.890000343322754;130;1.7730000019073486;None;None
+2020-10-10 10:02:02+00:00;61.49974160827696;23.75957884825766;98.19999694824219;10.979999542236328;131;1.7640000581741333;None;None
+2020-10-10 10:02:03+00:00;61.49975895881653;23.75958069227636;98.0;12.920000076293945;133;1.7730000019073486;None;None
+2020-10-10 10:02:04+00:00;61.49978343397379;23.759581446647644;98.19999694824219;15.619999885559082;135;1.7910000085830688;None;None
 							</code>
 						</pre>
 						<img src="imgs/stream_sample_table.png">
@@ -118,11 +121,11 @@
 					<section>
 						<h3>Pitanja na koja treba odgovoriti</h3>
 						<ol>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
+							<li>Poređenje trenutnog i prosečnog pace-a (prikaz oba i da li je trenutni u padu, rastu, stagnaciji)</li>
+							<li>Pretpostavljeno vreme do završetka trke (dužina staze uneta na početku)</li>
+							<li>Ukupan vertikalni uspon/pad</li>
+							<li>Određivanje HeartRate zona u toku trke</li>
+							<li>Uticaj uspona na brzinu  (% za koliko se smanjuje)</li>
 						</ol>
 					</section>
 				</section>
