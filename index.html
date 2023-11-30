@@ -32,7 +32,7 @@
 						<h2>Motivacija</h2>
 					</section>
 					<section>
-						<p>Analiziranje podataka vezanih za učinak učesnika ultramaratona, kao i analiza performansi trkača u realnom vremenu</p>
+						<p>Analiziranje podataka vezanih za učinak učesnika ultramaratona, kao i analiza performansi trkača u realnom vremenu.</p>
 					</section>
 				</section>
 				<section>
@@ -68,21 +68,26 @@ Year of event,Event dates,Event name,Event distance/length,Event number of finis
 							</code>
 						</pre>
 						<img height="150px" src="imgs/batch_sample_table.png">
-						<p style="font-size: 12px;">U trkama koje su vremenski ograničene, 'performance' kolona sadrži broj prettrčanih kilometara, a 'average speed' je broj pređenih kilometara po satu</p>
+						<p style="font-size: 12px;">Budući da postoje dva tipa maratona, ograničeni dužinom staze i ograničeni vremenom, skup podataka bih particionisao po tom kriterijumu radi kasnije lakse obrade.</p>
+						<p style="font-size: 12px;">Treba normalizovati podatke koji su vezani za vreme i predjeni put </p>
+						<p style="font-size: 12px;">U trkama koje su duzinski ograničene, 'performance' kolona sadrži vreme za koje je takmicar presao maraton, a 'average speed' je je prosecna brzina izražena u  km/h</p>
+						<p style="font-size: 12px;">U trkama koje su vremenski ograničene, 'performance' kolona sadrži broj pretrčanih kilometara, a 'average speed' je broj pređenih metara po satu</p>
 					</section>
 					<section style="font-size: 25px;">
 						<h3>Pitanja na koja treba odgovoriti</h3>
+						<p style="font-size: 12px;">Pre vecine upita maratoni su prethodno grupisani u odnosu na njihove duzine/trajanja i upiti su zatim radjeni nad pojedinacnim grupama</p>
+						<p style="font-size: 12px;">Kod upita po starosnoj dobi grupisati u starosne grupe</p>
 						<ol>
 							<li>Maratoni sa najvećom prosečnom brzinom</li>
 							<li>Popularnost maratona u odnosu na njihovu dužinu</li>
 							<li>Prosečna brzina po starosnoj dobi</li>
 							<li>Prosečna brzina po polu</li>
-							<li>Takmičari sa najboljim napretkom u prosečnoj brzini u karijeri</li>
+							<li>Takmičari sa najstabilnijim napretkom u prosecnoj brzini u karijeri</li>
 							<li>Države sa najvećim brojem takmičara</li>
-							<li>Takmičari sa najvećim brojem pređenih kilometara po maratonu</li>
+							<li>Takmičari sa najvećim brojem pređenih kilometara po maratonu (vremenski ograniceni maratoni)</li>
 							<li>Raspodela takmičara po starosti</li>
 							<li>Takmičari sa najvećom pređenom kilometrazom u čitavoj karijeri</li>
-							<li>Najmasovniji maratoni</li>
+							<li>Takmičari sa najvecim prosecnim brojem kilometara po satu (vremenski ograniceni maratoni)</li>
 						</ol>
 					</section>
 				</section>
@@ -91,7 +96,7 @@ Year of event,Event dates,Event name,Event distance/length,Event number of finis
 						<h2>Stream obrada</h2>
 					</section>
 					<section>
-						<p>Praćenje performansi učesnika maratona u realnom vremenu</p>
+						<p>Praćenje performansi učesnika maratona u realnom vremenu.</p>
 					</section>
 					<section>
 						<h3>Uzorak podataka</h3>
@@ -122,10 +127,10 @@ Datetime;Latitude;Longitude;Altitude;Distance;HeartRate;Speed;Cadence;Watts
 						<h3>Pitanja na koja treba odgovoriti</h3>
 						<ol>
 							<li>Poređenje trenutnog i prosečnog pace-a (prikaz oba i da li je trenutni u padu, rastu, stagnaciji)</li>
-							<li>Pretpostavljeno vreme do završetka trke (dužina staze uneta na početku)</li>
+							<li>Pretpostavljeno vreme do završetka trke (u odnosu na dužinu staze unete na početku i prosečne brzine)</li>
 							<li>Ukupan vertikalni uspon/pad</li>
 							<li>Određivanje HeartRate zona u toku trke</li>
-							<li>Uticaj uspona na brzinu  (% za koliko se smanjuje)</li>
+							<li>Uticaj uspona na brzinu  (% za koliko se smanjuje, poredi brzine pre i za vreme uspona)</li>
 						</ol>
 					</section>
 				</section>
